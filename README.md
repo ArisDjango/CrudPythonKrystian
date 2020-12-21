@@ -16,11 +16,11 @@
     - Menambahkan installed apps
         - Masuk ke folder backendapi>settings.py,
         - pada INSTALLED_APPS tambahkan:
-        '''
-        'rest_framework,
+        ```
+        'rest_framework',
         'corsheaders',
         'api'
-        '''
+        ```
 
     - Menjalankan server
         - python manage.py migrate
