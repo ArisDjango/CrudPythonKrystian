@@ -6,14 +6,14 @@
         - Langkah ketika bermasalah dengan privillage ketika aktivasi venv:
         - `Set-ExecutionPolicy Unrestricted -Scope Process`
         - `& d:/TUTORIAL/PYTHON/CrudPythonKrystian/venv/Scripts/Activate.ps1`
-        - pip install django djangorestframework django-cors-headers
-        - django-admin startproject backendapi
-        - cd backendapi/
-        - django-admin strartapp api
+        - `pip install django djangorestframework django-cors-headers`
+        - `django-admin startproject backendapi`
+        - `cd backendapi/`
+        - `django-admin strartapp api`
 
     - **Membuat superuser**
-        - 'python manage.py migrate'
-        - 'python manage.py createsuperuser'
+        - `python manage.py migrate`
+        - `python manage.py createsuperuser`
         - isi username, email, isi password aris1985
 
     - **Menambahkan installed apps**
@@ -56,10 +56,10 @@
 2. **FRONT END**
     - **Instalasi React**
         - pastikan node sudah terinstall
-        - (venv) PS D:\TUTORIAL\PYTHON\CrudPythonKrystian\frontend>
-        - npx create-react-app frontendapp
-        - cd frontendapp
-        - yarn start, app akan berjalan di localhost
+        - posisi dir (venv) PS D:\TUTORIAL\PYTHON\CrudPythonKrystian\frontend>
+        - `npx create-react-app frontendapp`
+        - `cd frontendapp`
+        - `yarn start`, app akan berjalan di localhost
     
     - **Membuat login.js dan menampilkan pada App.js**
         - aplikasi kita di src>App.js, (hapus logo.svg, app.test.js karena ndak butuh)
