@@ -1,8 +1,11 @@
 # CrudPythonKrystian
-1. backend API
+1. BACK END API
     - Instalasi Django
         - clone git
         - buat venv
+        - Langkah ketika bermasalah dengan privillage ketika aktivasi venv:
+        - Set-ExecutionPolicy Unrestricted -Scope Process
+        - & d:/TUTORIAL/PYTHON/CrudPythonKrystian/venv/Scripts/Activate.ps1
         - pip install django djangorestframework django-cors-headers
         - django-admin startproject backendapi
         - cd backendapi/
@@ -50,3 +53,29 @@
         - POST http://127.0.0.1:8000/auth/ , tentukan user/password, maka hasilnya akan menggenerate data token di tiap user
         - daftar token tiap user bisa dilihat di http://127.0.0.1:8000/admin/authtoken/tokenproxy/
 
+2. FRONT END
+    - Instalasi React
+        - pastikan node sudah terinstall
+        - (venv) PS D:\TUTORIAL\PYTHON\CrudPythonKrystian\frontend>
+        - npx create-react-app frontendapp
+        - cd frontendapp
+        - yarn start, app akan berjalan di localhost
+    
+    - Membuat login.js dan menampilkan pada App.js
+        - aplikasi kita di src>App.js, (hapus logo.svg, app.test.js karena ndak butuh)
+        - di src, buat folder components/login.js
+        - isi login.js dengan component react <Login> sederhana berisi form dulu user,pass,login button
+        - pada App.js: import <Login> dari login.js (ingat semua tempilan ada di app.js)
+        - cek pada browser apakah berhasil terender/tampil
+
+    - Fungsional login.js
+        - buat state bernama credentials
+            - berfungsi menyimpan nilai input username dan password
+            - object = username, password
+        - buat method 'login'
+            - berfungsi sbg event/action dari tombol login
+        - buat method 'inputChanged'
+            - berfungsi mengambil nilai dari form input dan mengembalikan nilai ke state 
+
+
+            
