@@ -4,8 +4,8 @@
         - clone git
         - buat venv
         - Langkah ketika bermasalah dengan privillage ketika aktivasi venv:
-        - `Set-ExecutionPolicy Unrestricted -Scope Process`
-        - `& d:/TUTORIAL/PYTHON/CrudPythonKrystian/venv/Scripts/Activate.ps1`
+            - `Set-ExecutionPolicy Unrestricted -Scope Process`
+            - `& d:/TUTORIAL/PYTHON/CrudPythonKrystian/venv/Scripts/Activate.ps1`
         - `pip install django djangorestframework django-cors-headers`
         - `django-admin startproject backendapi`
         - `cd backendapi/`
