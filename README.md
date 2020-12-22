@@ -4,8 +4,8 @@
         - clone git
         - buat venv
         - Langkah ketika bermasalah dengan privillage ketika aktivasi venv:
-        - Set-ExecutionPolicy Unrestricted -Scope Process
-        - & d:/TUTORIAL/PYTHON/CrudPythonKrystian/venv/Scripts/Activate.ps1
+        - `Set-ExecutionPolicy Unrestricted -Scope Process`
+        - `& d:/TUTORIAL/PYTHON/CrudPythonKrystian/venv/Scripts/Activate.ps1`
         - pip install django djangorestframework django-cors-headers
         - django-admin startproject backendapi
         - cd backendapi/
@@ -26,8 +26,8 @@
         ```
 
     - Menjalankan server
-        - python manage.py migrate
-        - python manage.py runserver
+        - `python manage.py migrate`
+        - `python manage.py runserver`
 
     - Kode api dan routing
         - api>views.py, masukkan code
@@ -76,6 +76,15 @@
             - berfungsi sbg event/action dari tombol login
         - buat method 'inputChanged'
             - berfungsi mengambil nilai dari form input dan mengembalikan nilai ke state 
+
+    - Tes koneksi login di frontend terhadap backendAPI
+        - konfigurasi penting penghubung frontend dan backendapi ada pada method 'login' di login.js, jadi perhatikan code nya
+        - Tambahkan konfigurasi cors pada backendapi/setting.py
+            - CORS (Cross-origin resource sharing) adalah permasalahan umum pada djangoAPI, diperlukan permission request karena ketatnya security django
+        - Lebih lengkapnya jika ada masalah dengan cors django bisa dilihat di https://dzone.com/articles/how-to-fix-django-cors-error atau https://stackoverflow.com/questions/38482059/enabling-cors-cross-origin-request-in-django
+        - cek di postman metode POST http://127.0.0.1:8000/auth/ , pastikan output berupa json token user masih berhasil tergenerate
+        - cek di di inspect chrome>network>headers, pastikan request method = POST dan request payload=value dari username dan password
+        - chrome>network>preview dan response memberikan output json token user
 
 
             
