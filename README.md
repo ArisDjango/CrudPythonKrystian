@@ -31,7 +31,7 @@
 
     - **Kode api dan routing**
         - api>views.py, masukkan code
-        - buat file api>serializers.py, masukkan code
+        - buat file api>[serializers.py](https://github.com/ArisDjango/CrudPythonKrystian/blob/2-front_end_login/backendapi/api/serializers.py), masukkan code
         - buka file backendapi>urls.py, code
         - buat file api>urls.py, code
 
@@ -49,8 +49,8 @@
         - tokens>add, buat token baru secara manual untuk username salah satu user
         - untuk membuat token secara otomatis setiap add user, code ada di serializers.py
         - Testing token di postman:
-        - GET http://127.0.0.1:8000/auth/ menghasilkan 'not allowed'
-        - POST http://127.0.0.1:8000/auth/ , tentukan user/password, maka hasilnya akan menggenerate data token di tiap user
+            - GET http://127.0.0.1:8000/auth/ menghasilkan 'not allowed'
+            - POST http://127.0.0.1:8000/auth/ , tentukan user/password, maka hasilnya akan menggenerate data token di tiap user
         - daftar token tiap user bisa dilihat di http://127.0.0.1:8000/admin/authtoken/tokenproxy/
 
 2. **FRONT END**
