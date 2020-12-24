@@ -5,7 +5,9 @@ class Login extends Component {
     state = {
         credentials: {username:'', password:''}
     }
-    
+
+  //Menghandle onClick pada button event
+  //Mengambil data dari django api
     login = event => {
         console.log(this.state.credentials);
         fetch('http://127.0.0.1:8000/auth/',{
@@ -13,17 +15,18 @@ class Login extends Component {
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(this.state.credentials)    
         })
-        .then(data => data.json())
+        .then(data => data.json())//Mengambil data bentuk json
         .then(
           data => {
             console.log(data.token);//menyimpan data di local storage
           }
         ).catch( error => console.error(error))
     }
-
+  
+  //Menghandle onChange pada form input
     inputChanged = event => {
         const cred = this.state.credentials; //memilih dari state
-        cred[event.target.name] = event.target.value;//mengambil vilai dari value
+        cred[event.target.name] = event.target.value;//mengambil nilai dari value
         this.setState({credentials: cred});// mengembalikan nilai ke state
     }
     
