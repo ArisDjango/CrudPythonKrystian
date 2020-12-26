@@ -9,7 +9,7 @@ class Login extends Component {
   //Menghandle onClick pada button event
   //Mengambil data dari django api
     login = event => {
-        console.log(this.state.credentials);
+        //console.log(this.state.credentials);
         fetch('http://127.0.0.1:8000/auth/',{
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
@@ -18,10 +18,26 @@ class Login extends Component {
         .then(data => data.json())//Mengambil data bentuk json
         .then(
           data => {
-            console.log(data.token);//menyimpan data di local storage
+            //console.log(data.token);//menyimpan data di local storage
+            this.props.userLogin(data.token);
           }
         ).catch( error => console.error(error))
     }
+
+    register = event => {
+      //console.log(this.state.credentials);
+      fetch('http://127.0.0.1:8000/api/users/',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(this.state.credentials)    
+      })
+      .then(data => data.json())//Mengambil data bentuk json
+      .then(
+        data => {
+          console.log(data.token);//menyimpan data di local storage
+        }
+      ).catch( error => console.error(error))
+  }
   
   //Menghandle onChange pada form input
     inputChanged = event => {
@@ -52,6 +68,7 @@ class Login extends Component {
               </label>
               <br/>
               <button onClick={this.login}>Login</button>
+              <button onClick={this.register}>Register</button>
             </div>
           );
     }
